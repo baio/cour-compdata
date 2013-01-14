@@ -1,4 +1,5 @@
 corr <- function(directory, threshold = 0) {
+    
   ## 'directory' is a character vector of length 1 indicating
   ## the location of the CSV files
   
@@ -9,31 +10,24 @@ corr <- function(directory, threshold = 0) {
   
   ## Return a numeric vector of correlations
   
-  loadData <- function() {
-        
-    loadSingle <- function(i)
-    {  
-      path = sprintf("%s/%03d.csv", directory, as(i, "numeric"))
-      
-      x <- read.csv(path)      
-      
-      head(x)
-      
-      if (sum(complete.cases(x)) > threshold)
-      {
-        x        
-      }
-      else
-      {
-        c()
-      }
-    }
+  source("getmonitor.R")  
     
-    lapply(1, loadSingle)            
-  }
+  y <-  sapply(1:332, function(i){
+
+    x <- getmonitor(i, directory)
+    
+    x <- x[complete.cases(x), ]
+    
+    if(nrow(x) > threshold)
+    {        
+      cor(x$nitrate, x$sulfate)              
+    }
+    else
+    {
+      0
+    }  
+  })   
   
-  data <- loadData()
-            
-  #head(data, n = 6L)
-  
+  y[y != 0]
 }
+
