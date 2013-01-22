@@ -10,9 +10,14 @@ outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
 #21 by heart failure
 #27 pneumonia
 
-res.ha <- as.numeric(outcome[,11])
+res.ha <- as.numeric(outcome[,11])[!is.na(x)]
 res.hf <- as.numeric(outcome[,17])
 res.p <- as.numeric(outcome[,23])
+
+res.ha <- res.ha[!is.na(res.ha)]
+res.hf <- res.hf[!is.na(res.hf)]
+res.p <- res.p[!is.na(res.p)]
+
 
 #2. Coerce these columns to be numeric using the as.numeric function as above. You may receive warnings
 #about NAs but that is okay.
@@ -22,12 +27,13 @@ res.p <- as.numeric(outcome[,23])
 #to have 3 rows and 1 column.
 
 #ylab="Frequency", xlab="30−day Death Rate", 
-xlim <- range(c(res.ha, res.hf, res.p), na.rm = T)
+xlim <- range(c(res.ha, res.hf, res.p))
 par(mfrow = c(3, 1))
 hist(res.ha, main="Heart Attack", xlab="30−day Death Rate", ylab="Frequency", xlim=xlim)
+abline(v = median(res.ha))
 hist(res.hf, main="Heart Failure", xlab="30−day Death Rate", ylab="Frequency", xlim=xlim)
+abline(v = median(res.hf))
 hist(res.p, main="Pneumonia", xlab="30−day Death Rate", ylab="Frequency", xlim=xlim)
-
-hist(ylab="Frequency", xlab="30−day Death Rate")
+abline(v = median(res.p))
 
 
