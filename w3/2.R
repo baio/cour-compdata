@@ -30,11 +30,11 @@ res.p <- res.p[!is.na(res.p)]
 xlim <- range(c(res.ha, res.hf, res.p))
 par(mfrow = c(3, 1))
 z <- mean(res.ha)
-hist(res.ha, main=substitute("Heart attack (" * bar(X) == k * ")", list(k=mean(res.ha))), xlab="30-ˆ’day Death Rate", ylab="Frequency", xlim=xlim)
+hist(res.ha, main=substitute("Heart attack (" * bar(X) == k * ")", list(k=mean(res.ha))), xlab="30-??day Death Rate", ylab="Frequency", xlim=xlim)
 abline(v = median(res.ha))
-hist(res.hf, main=substitute("Heart failure (" * bar(X) == k * ")", list(k=mean(res.hf))), xlab="30-ˆ’day Death Rate", ylab="Frequency", xlim=xlim)
+hist(res.hf, main=substitute("Heart failure (" * bar(X) == k * ")", list(k=mean(res.hf))), xlab="30-??day Death Rate", ylab="Frequency", xlim=xlim)
 abline(v = median(res.hf))
-hist(res.p, main=substitute("Pneumonia (" * bar(X) == k * ")", list(k=mean(res.p))), xlab="30-ˆ’day Death Rate", ylab="Frequency", xlim=xlim)
+hist(res.p, main=substitute("Pneumonia (" * bar(X) == k * ")", list(k=mean(res.p))), xlab="30-??day Death Rate", ylab="Frequency", xlim=xlim)
 abline(v = median(res.p))
 
 
