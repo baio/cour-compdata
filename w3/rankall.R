@@ -18,30 +18,18 @@ rankall <- function(outcome, num = "best") {
   }
   
   d <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
-  
-  d <- d[which(d$State==state),]   
-  
+    
   d[,11] <- as.numeric(d[,11])
   d[,17] <- as.numeric(d[,17])
   d[,23] <- as.numeric(d[,23])
   
   d <- d[is.na(d[,i]) == F,]
   
-  if (num == "best")
-  {
-    num = 1
-  }
+  each1 <- split(d, d$State)
   
-  if (num == "worst")
-  {
-    num = nrow(d)  
-  }
+  #states <- sort(unique(d$State))
   
-  
-  states <- sort(unique(d$State))
-  
-  z <- lapply(states, function(state) {
-    x <- d[which(d$State==state),]
+  each2 <- lapply(each1, function(x) {
     n = num
     if (num == "best")
     {
@@ -51,8 +39,16 @@ rankall <- function(outcome, num = "best") {
     {
       n = nrow(x)  
     }    
-    x[order(x[i], x["Hospital.Name"]), ][n, c(2, 7)]
+    x[order(x[i], x["Hospital.Name"]), ][n, ]
     })
   
-  z
+  each3<-as.data.frame(do.call(rbind, each2)) 
+  
+  each4 <- data.frame(hospital = each3[,2], state = names(each1))#each3[,c(2,7)]
+  row.names(each4) <- names(each1)
+  
+  #colnames(each4)[1] <- "hospital"
+  #colnames(each4)[2] <- "state"
+  
+  each4
 }
