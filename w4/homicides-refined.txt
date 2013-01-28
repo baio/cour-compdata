@@ -1,4 +1,4 @@
-lat	long	cause	name	link	Column 1 2 2	race	age	sex	date	died at
+lat	long	cause	name	link	addr	race	age	sex	date	died at
 39.311024	-76.674227	shooting	Leon Nelson		3400 Clifton Ave.Baltimore, MD 21216	black	17	male	2007-01-01T00:00:00Z	shock trauma
 39.312641	-76.698948	shooting	Eddie Golf		4900 Challedon RoadBaltimore, MD 21207	black	26	male	2007-01-02T00:00:00Z	scene
 39.309781	-76.649882	bluntforce	Nelsene Burnette		2000 West North AveBaltimore, MD 21217	black	44	female	2007-01-02T00:00:00Z	scene
@@ -513,7 +513,6 @@ lat	long	cause	name	link	Column 1 2 2	race	age	sex	date	died at
 39.309308	-76.667701	shooting	Jerrell Brown	http://essentials.baltimoresun.com/micro_sun/homicides/victim/285/jerrell-brown	3000 W. North Ave.Baltimore, MD 21216	black	30	male	2008-01-08T00:00:00Z	scene
 39.325229	-76.572556	shooting	Jerome Waters	http://essentials.baltimoresun.com/micro_sun/homicides/victim/284/jerome-waters	2800 Kentucky Ave.Baltimore, MD 21213	black	32	male	2008-01-04T00:00:00Z	johns hopkins hospital
 39.2452903	-76.6208496	shooting	Linwood Colvin	http://essentials.baltimoresun.com/micro_sun/homicides/victim/283/linwood-colvin	800 Bethune RoadBaltimore, MD 21225	black	28	male	2008-01-01T00:00:00Z	maryland shock trauma center
-"						"										
 39.291747	-76.569676	stabbing	Anthony Metzel	http://essentials.baltimoresun.com/micro_sun/homicides/victim/791/anthony-metzel	12 S. Highland AveBaltimore, MD 21224	white	56	male	2009-12-31T00:00:00Z	unknown
 39.3361374	-76.6790198	shooting	Jeffrey Ward	http://essentials.baltimoresun.com/micro_sun/homicides/victim/790/jeffrey-ward	3800 Oakford AveBaltimore, MD 21215	black	19	male	2009-12-30T00:00:00Z	sinai hospital
 39.315461	-76.6095256	shooting	Joseph Beatty	http://essentials.baltimoresun.com/micro_sun/homicides/victim/789/joseph-beatty	2300 Greenmount AvenueBaltimore, MD 21218	black	38	male	2009-12-29T00:00:00Z	johns hopkins hospital
